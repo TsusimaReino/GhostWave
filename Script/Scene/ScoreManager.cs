@@ -7,6 +7,9 @@ using System.Collections;
 /// </summary>
 public class ScoreManager : MonoBehaviour
 {
+    ////敵を倒した時のスコア
+    [SerializeField]
+    public int _scoreValue = 10;
     //スコア
     public static int _score;
 
@@ -25,5 +28,12 @@ public class ScoreManager : MonoBehaviour
     {
         //テキストコンポーネントのテキストに表示する文字列を設定
         _text.text = "Score: " + _score;
+        EnemyUi();
+    }
+    private void EnemyUi()
+    {
+
+        //スコアを加算する
+        ScoreManager._score += _scoreValue;
     }
 }

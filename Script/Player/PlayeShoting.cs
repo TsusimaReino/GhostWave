@@ -6,11 +6,11 @@ public class PlayerShoting : PlayerCorl
 {
     [Header("弾のダメージ")]
     [SerializeField]
-    public  int _damagePerShot = 20;
+    public int _damagePerShot = 20;
     [Header("撃つ間隔")]
     [SerializeField]
     public float _timeBetweenBullets = 0.15f;
-    [Header ("飛距離")]
+    [Header("飛距離")]
     [SerializeField]
     public float _range = 100f;
     //経過時間
@@ -26,6 +26,7 @@ public class PlayerShoting : PlayerCorl
     private LineRenderer _gunLine = default;
     private AudioSource _gunAudio = default;
     private Light _gunLight = default;
+    //private WeaponShot _weaponShot = default;
     //エフェクトが消える時間
     private float _effectsDisplayTime = 0.2f;
 
@@ -38,6 +39,8 @@ public class PlayerShoting : PlayerCorl
         _gunLine = GetComponent<LineRenderer>();
         _gunAudio = GetComponent<AudioSource>();
         _gunLight = GetComponent<Light>();
+
+        //_weaponShot = GetComponent<WeaponShot>();
     }
     //経過時間を計測処理
     void Update()
@@ -49,7 +52,8 @@ public class PlayerShoting : PlayerCorl
         if (Input.GetButton("Fire1") && _timer >= _timeBetweenBullets && Time.timeScale != 0)
         {
             //弾を打つ
-            Shoot();
+            //_weaponShot.Shotting();
+            Shot();
         }
 
         //経過時間がエフェクトの表示時間よりも大きくなった場合
@@ -72,7 +76,7 @@ public class PlayerShoting : PlayerCorl
     /// <summary>
     /// 弾を撃つ処理
     /// </summary>
-    void Shoot()
+    private void Shot()
     {
         //経過時間を初期化
         _timer = 0f;

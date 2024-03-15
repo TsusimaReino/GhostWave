@@ -28,7 +28,6 @@ public class EnemyManager : EnemyCorl
     /// </summary>
     void Spawn()
     {
-       
         //ƒvƒŒƒCƒ„[‚ÌHP‚ª0ˆÈ‰º‚Ìê‡
         if (_playerHealth._playerCurrentHealth <= 0f)
         {

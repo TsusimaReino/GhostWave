@@ -4,8 +4,6 @@ using UnityEngine.AI;
 public class EnemyMovement : EnemyCorl
 {
     private Transform _player;
-    //NavMesh Agent(敵)
-    //UnityEngine.AI.NavMeshAgent _nav; //NavMesh Agent(敵)
 
     void Awake()
     {
@@ -27,7 +25,7 @@ public class EnemyMovement : EnemyCorl
         //敵とプレイヤーが生きている場合
         if (_enemyHealth._enemyCurrentHealth > 0 && _playerHealth._playerCurrentHealth > 0)
         {
-            //NavMesh Agent(敵)をプレイヤーに向かって動かす(バグ処理)
+            //NavMesh Agent(敵)をプレイヤーに向かって動かす
             _enemyNav.SetDestination(_player.position);
         }
         //敵もしくは、プレイヤーが倒されている場合

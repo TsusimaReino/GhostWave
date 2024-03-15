@@ -15,7 +15,7 @@ public class EnemyCorl : MonoBehaviour
     protected GameObject _enemyGameTarget = default;
     protected NavMeshAgent _enemyNav = default;  //NavMesh Agent(“G)
 
-    //protected  Transform  target;
+    //protected  Transform  _target;
     public void Start()
     {
         
