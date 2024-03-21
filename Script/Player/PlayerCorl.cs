@@ -16,5 +16,11 @@ public class PlayerCorl:MonoBehaviour
     protected Vector3 _aim;
     //プレイヤーの回転
     protected Quaternion _playerRotation;
+
+    private PlayerHealth _playerHealth;
+    private PlayerShoting _playerShoting;
+
+    [System.NonSerialized] //プレイヤーのHPを親クラスに
+    public float _hP = default;
 }
 

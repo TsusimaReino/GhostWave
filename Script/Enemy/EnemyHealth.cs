@@ -36,6 +36,7 @@ public class EnemyHealth : EnemyCorl
     //敵の消滅フラグ
     private bool _isSinking = default;
     //const int DESTROYTIME = 2;
+
     /// <summary>
     /// コンポーネントの設定
     /// </summary>

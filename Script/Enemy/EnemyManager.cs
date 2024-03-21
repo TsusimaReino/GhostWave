@@ -34,7 +34,7 @@ public class EnemyManager : EnemyCorl
             return;
         }
 
-        //敵を生成する場所をランダムに決める
+        //敵を生成する場所をランダムに決める(複数スポーン地点がある場合のみ)
         int spawnPointIndex = Random.Range(0, _spawnPoints.Length);
 
         //敵を生成する

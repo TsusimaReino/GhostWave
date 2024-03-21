@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+[RequireComponent(typeof(PlayerMovement))]
+
 /// <summary>
 /// UI関連
 /// </summary>
@@ -102,6 +104,8 @@ public class PlayerHealth : PlayerCorl
         _playerMovement.enabled = false;
         //弾を撃てなくする
         _playerShoting.enabled = false;
+
+        Debug.Log("ゲームオーバー！");
     }
     /// <summary>
     /// レベルリセット処理 未実装
@@ -111,3 +115,4 @@ public class PlayerHealth : PlayerCorl
         Scene.LoadScene(0);
     }
 }
+
